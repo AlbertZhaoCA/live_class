@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 强制使用浅色模式，避免深色模式导致字体看不见 */
+* {
+  color-scheme: light;
+}
+
+html, body {
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+/* 确保所有文本元素都可见 */
+h1, h2, h3, h4, h5, h6, p, span, div, label, a {
+  color: inherit;
+}
+
+/* 确保输入框文字和背景可见 */
+input, textarea, select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* 确保按钮文字可见 */
+button {
+  color: inherit;
+}
+
+/* 修复可能的深色模式问题 */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+}
