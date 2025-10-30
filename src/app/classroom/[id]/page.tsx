@@ -163,7 +163,7 @@ export default function ClassroomPage() {
       setMessages([]);
       fetchMessages(activeSession.id);
 
-      const newSocket = io('http://localhost:3000');
+      const newSocket = io(window.location.origin);
       socketRef.current = newSocket; // Store in ref for access in closures
       
       newSocket.on('connect', () => {
